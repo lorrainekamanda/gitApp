@@ -1,0 +1,47 @@
+<div class="container-fluid">
+  <div class="navbar">
+    <h3>GITHUB ACCOUNT SEARCH by Lorraine</h3>
+    <input type="text" [(ngModel)] = "username" name = "username" (keyup) = "findProfile()"
+     placeholder="enter github username..."  routerLink = 'profile' routerLinkActive = 'active' ><i class="fas fa-search">search</i>
+    </div>
+
+
+<div class="row row1" *ngIf = 'profile'>
+
+
+    <div class="col-lg-4 col1">
+   
+      <h1> {{profile.name}}  </h1> 
+    
+     
+    </div>
+   
+   
+    <div class="col-lg-2 col2" >
+    <button style="background-color: chartreuse;border: none;" class = "buttonA">   Repositories {{profile.public_repos}}   </button> <br> <br>
+   
+   </div>
+   
+    <div class="col-lg-2 col3">
+    <button style="background-color: cyan;border: none;">  Followers {{profile.followers}}   </button> <br><br><br>
+    <button class="btn btn-warning"> <a href="{{profile.html_url}}">  VIEW ON GITHUB  </a></button>
+   
+    </div>
+    
+    <div class="col-lg-2 col4">
+   <button style="background-color: darkcyan;border: none;">  Following {{profile.following}}  </button> 
+    </div>
+    <div class="col-lg-2 col4">
+     <button style="background-color: rgb(0, 217, 255);border: none;">  Gists {{profile.public_gists}}  </button> 
+      </div>
+     </div>
+   
+   
+   
+   
+  </div>
+   
+   
+   
+ 
+
