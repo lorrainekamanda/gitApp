@@ -42,4 +42,20 @@ input::placeholder{
 }
 .panel-body{
     margin: 20px;
-
+}
+.buttonA{
+    background-color: chartreuse;
+    border: none;
+}
+.buttonB{
+    background-color: cyan;
+    border: none;
+}
+.buttonC{
+    background-color: darkcyan;
+    border: none;
+}
+.buttonD{
+    background-color: rgb(0, 217, 255);
+    border: none;
+}
