@@ -1,6 +1,9 @@
+import { Repo } from './../repo';
+import { Objects } from './../objects';
 import { ProfileServiceService } from './../profile-service.service';
 import { Component, OnInit,Output,EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'GS-profile-details',
@@ -8,6 +11,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./profile-details.component.css']
 })
 export class ProfileDetailsComponent implements OnInit {
+
 
   @Output() ifProfile = new EventEmitter<any>()
 
@@ -24,7 +28,10 @@ export class ProfileDetailsComponent implements OnInit {
       this.profile = profile
       console.log(profile)
     })
-
+    this.service.getRepo().subscribe(repos => {
+      console.log(repos)
+      this.repos = repos
+    })
   
   }
 
