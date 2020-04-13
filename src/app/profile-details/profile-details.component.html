@@ -1,64 +1,55 @@
 <div class="container-fluid">
-  <div class="navbar">
-    <h3>GITHUB ACCOUNT SEARCH by Lorraine</h3>
-    <input type="text" [(ngModel)] = "username" name = "username" (keyup) = "findProfile()"
-     placeholder="enter github username..." ><i class="fas fa-search">search</i>
-    </div>
-
-
-<div class="row row1" *ngIf = 'profile'>
-
-
-    <div class="col-lg-4 col1">
-   
-      <h1> {{profile.name}}  </h1> 
-    
-     
-    </div>
-   
-   
-    <div class="col-lg-2 col2" >
-    <button style="background-color: chartreuse;border: none;" class = "buttonA">   Repositories {{profile.public_repos}}   </button> <br> <br>
-   
+   <div class="navbar">
+       <h3>GITHUB ACCOUNT SEARCH by Lorraine</h3>
+       <input type="text" [(ngModel)] = "username" name = "username" (keyup) = "findProfile()"
+       placeholder="enter github username..." ><i class="fas fa-search">search</i>
    </div>
-   
-    <div class="col-lg-2 col3">
-    <button style="background-color: cyan;border: none;">  Followers {{profile.followers}}   </button> <br><br><br>
-    <button class="btn btn-warning"> <a href="{{profile.html_url}}">  VIEW ON GITHUB  </a></button>
-   
-    </div>
-    
-    <div class="col-lg-2 col4">
-   <button style="background-color: darkcyan;border: none;">  Following {{profile.following}}  </button> 
-    </div>
-    <div class="col-lg-2 col4">
-     <button style="background-color: rgb(0, 217, 255);border: none;">  Gists {{profile.public_gists}}  </button> 
+   <div class="row row1" *ngIf = 'profile'>
+      <div class="col-lg-4 col1">
+          <h1> {{profile.name}}  </h1> 
       </div>
-     </div>
-   
-   
-   
-   
-      <div class="row" *ngIf = 'profile'>
-       <div class="col-lg -4 col1" >
+      <div class="col-lg-2 col2" >
+          <button class = "buttonA">   Repositories {{profile.public_repos}}   </button> <br> <br>
+      </div>
+      <div class="col-lg-2 col3">
+          <button class="buttonB">  Followers {{profile.followers}}   </button> <br><br><br>
+          <button class="btn btn-warning"> <a href="{{profile.html_url}}">  VIEW ON GITHUB  </a></button>
+      </div>
+      <div class="col-lg-2 col4">
+          <button  class="buttonC">  Following {{profile.following}}  </button> 
+      </div>
+      <div class="col-lg-2 col4">
+          <button class="buttonD">  Gists {{profile.public_gists}}  </button> 
+      </div>
+      </div>
+   <div class="row" *ngIf = 'profile'>
+      <div class="col-lg -4 col1" >
          <img src="{{profile.avatar_url}}" alt="BIO PICTURE" id="pic"><br>
-        
-     </div>
-     <div class="col-lg-8 col6">
-       <ul class="list-group">
-        <li class="list-group-item" *ngIf = 'profile.location'> Location: {{profile.location}}</li>
-        <li class="list-group-item" *ngIf = 'profile.bio'> {{profile.bio}}</li>
-        <li class="list-group-item" *ngIf = 'profile.hireable'> Available for Hire</li>
-        <li class="list-group-item" *ngIf = 'profile.company'> {{profile.company}}</li>
-        <li class="list-group-item" *ngIf = 'profile.email'><a href="emailto:{{profile.email}}"> {{profile.email}} </a> </li>
-        <li class="list-group-item" *ngIf = 'profile.blog'> {{profile.blog}}</li>
-      
-       </ul><br><br>
-       
-        
-  </div>
+      </div>
+      <div class="col-lg-8 col6">
+          <ul class="list-group">
+             <li class="list-group-item" *ngIf = 'profile.location'> Location: {{profile.location}}</li>
+              <li class="list-group-item" *ngIf = 'profile.bio'> {{profile.bio}}</li>
+              <li class="list-group-item" *ngIf = 'profile.hireable'> Available for Hire</li>
+              <li class="list-group-item" *ngIf = 'profile.company'> {{profile.company}}</li>
+              <li class="list-group-item" *ngIf = 'profile.email'><a href="emailto:{{profile.email}}"> {{profile.email}} </a> </li>
+              <li class="list-group-item" *ngIf = 'profile.blog'> {{profile.blog}}</li>
+          </ul><br><br>
+          <ul class="list-group-item">
+              <li class="list-group-item" style="background-color: coral;">Created At: {{profile.created_at|date}}</li>
+              <li class="list-group-item" style="background-color: darkorange;"> Updated At:{{profile.updated_at|date}}</li>
+          </ul> 
+      </div>
+          <h3 style = "margin-bottom:130px;margin-left: 300px;">Repos:</h3><br><br>
+      <div class="panel-body" *ngFor = 'let repo of repos'  >
+          <p  class = "list-group-item" >   {{repo.name}}    <a href='{{repo.html_url}}' class="btn btn-success"> VIEW REPO ON GITHUB</a> 
+          </p>  
+      </div>
+   </div>
+</div>
    
    
+
    
  
 
