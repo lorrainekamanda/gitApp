@@ -1,10 +1,12 @@
 # GitSearch
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.7.
+Git Search is angular powered app that enables git hub users to login,key in their username and get access to your github access.
+The information available is the gists,repos,access to git hub etc
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4201/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
