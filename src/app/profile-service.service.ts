@@ -3,7 +3,8 @@ import { Objects } from './objects';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 
 import { Injectable } from '@angular/core';
-
+import { map, switchMap } from 'rxjs/operators';
+import { Observable, Subject } from 'rxjs';
 
 
 
@@ -13,7 +14,7 @@ import { Injectable } from '@angular/core';
 })
 export class ProfileServiceService {
 
-  visible:Objects
+
 
   private username:string
   private clientID = 'a6cf45e6db101a2b29c0'
@@ -27,9 +28,12 @@ export class ProfileServiceService {
    }
    getinfo(){
       return this.http.get("https://api.github.com/users/" + this.username +
-       "?client_id ="+this.clientID + "&client_secret =" + this.clientSecret)
+       "?client_id ="+this.clientID + "&client_secret =" + this.clientSecret).pipe(map((res:Response) => res.json()))
    }
-  
+   getRepo(){
+    return this.http.get("https://api.github.com/users/" + this.username +
+     "/repos?client_id ="+this.clientID + "&client_secret =" + this.clientSecret).pipe(map ((res:Response) => res.json()))
+ }
 
    updateProfile(username:string){
      this.username = username
