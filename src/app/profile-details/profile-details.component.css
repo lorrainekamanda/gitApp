@@ -22,3 +22,24 @@ input::placeholder{
 
 
 
+.navbar{
+    background-color:black ;
+    color: white;
+    height: 100px;
+    margin-bottom: 30px;
+}
+.row1{
+    margin-bottom: 20px;
+}
+.col6{
+    margin-right: 70px;
+}
+#pic{
+    border-radius: 100px;
+    height: 250px;
+    width: 250px;
+    border: skyblue solid 1px;
+}
+.panel-body{
+    margin: 20px;
+}

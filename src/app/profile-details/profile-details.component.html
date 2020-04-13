@@ -2,7 +2,7 @@
   <div class="navbar">
     <h3>GITHUB ACCOUNT SEARCH by Lorraine</h3>
     <input type="text" [(ngModel)] = "username" name = "username" (keyup) = "findProfile()"
-     placeholder="enter github username..."  routerLink = 'profile' routerLinkActive = 'active' ><i class="fas fa-search">search</i>
+     placeholder="enter github username..." ><i class="fas fa-search">search</i>
     </div>
 
 
@@ -55,27 +55,7 @@
       
        </ul><br><br>
        
-          <ul class="list-group-item">
-       <li class="list-group-item" style="background-color: coral;">Created At: {{profile.created_at|date}}</li>
-     <li class="list-group-item" style="background-color: darkorange;"> Updated At:{{profile.updated_at|date}}</li>
-   
-     </ul> 
-       
-   
-      
-      </div>
-      <h3 style = "margin-bottom:30px;margin-left: 300px;">Repos:</h3><br><br>
-    
-      <div class="panel-body" *ngFor = 'let repo of repos'  >
-     
-       
-        <p  class = "list-group-item" >   {{repo.name}}    <a href='{{repo.html_url}}' class="btn btn-success"> VIEW REPO ON GITHUB</a> 
-        </p>  
-         
-       </div>
-   
-   
-   </div>
+        
   </div>
    
    

@@ -3,7 +3,7 @@ import { Objects } from './../objects';
 import { ProfileServiceService } from './../profile-service.service';
 import { Component, OnInit,Output,EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+import { map, switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'GS-profile-details',
