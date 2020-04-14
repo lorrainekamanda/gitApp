@@ -28,11 +28,11 @@ export class ProfileServiceService {
    }
    getinfo(){
       return this.http.get("https://api.github.com/users/" + this.username +
-       "?client_id ="+this.clientID + "&client_secret =" + this.clientSecret).pipe(map((res:Response) => res.json()))
+       "?client_id ="+this.clientID + "&client_secret =" + this.clientSecret)
    }
    getRepo(){
     return this.http.get("https://api.github.com/users/" + this.username +
-     "/repos?client_id ="+this.clientID + "&client_secret =" + this.clientSecret).pipe(map ((res:Response) => res.json()))
+     "/repos?client_id ="+this.clientID + "&client_secret =" + this.clientSecret)
  }
 
    updateProfile(username:string){
