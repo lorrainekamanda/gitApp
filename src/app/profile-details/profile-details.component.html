@@ -43,7 +43,7 @@
       </div>
           <h3 style = "margin-bottom:130px;margin-left: 300px;">Repos:</h3><br><br>
       <div  class="panel-body" *ngFor = 'let repo of repos'  >
-          <p  class = "list-group-item" >   {{repo.name}}    <a href='{{repo.html_url}}' class="btn btn-success"> VIEW REPO ON GITHUB</a> 
+          <p gSHighlight class = "list-group-item" >   {{repo.name}}    <a href='{{repo.html_url}}' class="btn btn-success"> VIEW REPO ON GITHUB</a> 
           </p>  
       </div>
    </div>
