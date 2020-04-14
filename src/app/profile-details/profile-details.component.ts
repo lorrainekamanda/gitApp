@@ -1,3 +1,4 @@
+import { HighlightDirective } from './../highlight.directive';
 import { Repo } from './../repo';
 import { Objects } from './../objects';
 import { ProfileServiceService } from './../profile-service.service';
