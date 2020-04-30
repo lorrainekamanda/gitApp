@@ -1,20 +1,29 @@
+<div class="container-fluid">
+ <div class="navbar">
+    <h3>GITHUB ACCOUNT SEARCH by Lorraine</h3>
+    <input type="text" [(ngModel)] = "username" name = "username"
+    
+    placeholder="enter github username..."   class=" nav-active nav-link" (keyup) = 'findProfile()'><i class="fas fa-search">search</i>
+  
 
-<div class="row row1" *ngIf = 'profile'>
+ </div>
+
+ <div class="row row1" *ngIf = 'profile'>
     <div class="col-lg-4 col1">
         <h1> {{profile.name}}  </h1> 
     </div>
     <div class="col-lg-2 col2" >
-        <button class = "buttonA">   Repositories {{profile.public_repos}}   </button> <br> <br>
+        <button class = "btn btn-danger">   Repositories {{profile.public_repos}}   </button> <br> <br>
     </div>
     <div class="col-lg-2 col3">
-        <button class="buttonB">  Followers {{profile.followers}}   </button> <br><br><br>
+        <button class="btn btn-secondary">  Followers {{profile.followers}}   </button> <br><br><br>
         <button class="btn btn-warning"> <a href="{{profile.html_url}}">  VIEW ON GITHUB  </a></button>
     </div>
     <div class="col-lg-2 col4">
-        <button  class="buttonC">  Following {{profile.following}}  </button> 
+        <button  class="btn btn-success">  Following {{profile.following}}  </button> 
     </div>
     <div class="col-lg-2 col4">
-        <button class="buttonD">  Gists {{profile.public_gists}}  </button> 
+        <button class="btn btn-primary">  Gists {{profile.public_gists}}  </button> 
     </div>
     </div>
  <div class="row" *ngIf = 'profile'>
@@ -37,10 +46,23 @@
     </div>
         <h3 style = "margin-bottom:130px;margin-left: 300px;">Repos:</h3><br><br>
     <div class="panel-body" *ngFor = 'let repo of repos'  >
-        <p [gSHighlight]class = "list-group-item" >   {{repo.name}}    <a href='{{repo.html_url}}' class="btn btn-success"> VIEW REPO ON GITHUB</a> 
+        <p gSHighlight class = 'list-group-item' >   {{repo.name}}    <a href='{{repo.html_url}}' class="btn btn-success"> VIEW REPO ON GITHUB</a> 
         </p>  
     </div>
  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

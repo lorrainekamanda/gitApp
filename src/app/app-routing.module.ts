@@ -9,9 +9,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
    {path:'home',component:GithubComponent},
-   
-
- {path:'', redirectTo: '/profile', pathMatch:'full'}
+   {path:'profile',component:ProfileDetailsComponent}
 
 ];
 

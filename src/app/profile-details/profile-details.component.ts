@@ -14,27 +14,24 @@ import { map, switchMap } from 'rxjs/operators';
 export class ProfileDetailsComponent implements OnInit {
 
 
-  @Output() ifProfile = new EventEmitter<any>()
+ 
 
   profile:any
   username:string
   repos:any
-    constructor(private service:ProfileServiceService) {
+
+  @Output() isComplete = new EventEmitter<any>();
+
+  requestgit(complete:boolean){
+    this.isComplete.emit(complete);
+  }
+    constructor() {
       
   }
   
-  findProfile(){
-    this.service.updateProfile(this.username)
-    this.service.getinfo().subscribe(profile => {
-      this.profile = profile
-      console.log(profile)
-    })
-    this.service.getRepo().subscribe(repos => {
-      console.log(repos)
-      this.repos = repos
-    })
+
   
-  }
+  
 
   ngOnInit(): void {
   }

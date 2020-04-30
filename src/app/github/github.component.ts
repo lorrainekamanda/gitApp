@@ -1,7 +1,9 @@
+import { HighlightDirective } from './../highlight.directive';
 import { ProfileServiceService } from './../profile-service.service';
 import { HttpClient } from '@angular/common/http';
 import { Objects } from './../objects';
 import { Component, OnInit } from '@angular/core';
+
 
 
 
@@ -17,8 +19,10 @@ export class GithubComponent implements OnInit {
     constructor(private service:ProfileServiceService) {
       
   }
-  
+
   findProfile(){
+
+   
     this.service.updateProfile(this.username)
     this.service.getinfo().subscribe(profile => {
       this.profile = profile
@@ -29,7 +33,14 @@ export class GithubComponent implements OnInit {
       this.repos = repos
     })
   
+
+
+
+    
   }
+
+
+  
 
 
   ngOnInit(): void {
